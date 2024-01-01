@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
     if (!user) {
       return res.status(404).send('User not found');
     }
-
+    
     // Compare the provided password with the stored hashed password
     const passwordMatch = await bcrypt.compare(password, user.password);
 
